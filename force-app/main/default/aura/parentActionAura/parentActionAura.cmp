@@ -1,0 +1,11 @@
+<aura:component>
+    <aura:attribute name="valueFromChild" type="String"/>
+
+    <p>Parent Component</p>
+    <br/>
+    <strong>Value from Child Component: {!v.valueFromChild}</strong>
+    <hr/>
+    <c:childActionAura aura:id="msg" parentAction="{!c.methodCalledFromChild}"/>
+    <hr/>
+    <p>Parent Component ends here</p>
+</aura:component>	

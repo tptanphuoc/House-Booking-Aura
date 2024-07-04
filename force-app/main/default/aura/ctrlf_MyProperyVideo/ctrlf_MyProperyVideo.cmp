@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="property" type="Property__c"/>
+
+    <iframe width="1200" height="500" src="{!v.property.Property_Video_URL__c}" allowfullscreen="true"/>
+</aura:component>	

@@ -1,0 +1,10 @@
+<aura:component>
+    <aura:handler name="init" value="{!this}" action="{!c.firstLoad}"/>
+    <aura:attribute name="jsObj" type="Object"/>
+    <aura:attribute name="userData" type="LCDemoWrapperClass.Wrapper"/>
+
+    <h1>Obj value: {!v.jsObj.name} - {!v.jsObj.age}</h1>
+    <hr></hr>
+    <h1>Wrapper value: {!v.userData.myString} - {!v.userData.myInteger}</h1>
+    
+</aura:component>	

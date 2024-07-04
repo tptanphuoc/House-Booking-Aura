@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="property" type="Property__c"/>
+    <lightning:layout multipleRows="true">
+        <div class="slds-m-around_medium">
+            <lightning:formattedText style="color:brown;font-weight:bold;font-size: 20px;" value="{!v.property.Property_Description__c}"/>
+        </div>
+        <div class="slds-box slds-grid slds-wrap slds-p-around_small" style="margin-top:2%;width:100%;">
+            <div class="slds-col">
+                <lightning:layout multipleRows="true">
+
+                    <lightning:layoutItem padding="around-small">
+                        <div class="header-column">
+                            <p class="field-title" title="Retal Value">Rental Value</p>
+                            <lightning:formattedNumber value="{!v.property.Rent__c}" currencyCode="VND"/> VND
+                        </div>
+                    </lightning:layoutItem>
+
+                    <lightning:layoutItem padding="around-small">
+                        <div class="header-column">
+                            <p class="field-title" title="Retal Value">Security Deposit</p>
+                            <lightning:formattedNumber value="{!v.property.Security_Deposit__c}" currencyCode="VND"/> VND
+                        </div>
+                    </lightning:layoutItem>
+
+                    <lightning:layoutItem padding="around-small">
+                        <div class="header-column">
+                            <p class="field-title" title="Retal Value">Maintainance Charge</p>
+                            <lightning:formattedNumber value="{!v.property.Maintainance_Charge__c}" currencyCode="VND"/> VND
+                        </div>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </div>
+        </div>
+    </lightning:layout>
+</aura:component>	

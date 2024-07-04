@@ -1,0 +1,37 @@
+<aura:component controller="PropertyController" implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="propertyId" type="String"/>
+    <aura:attribute name="property" type="Property__c"/>
+    <aura:attribute name="propertyFound" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.getSelectedProperty}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}" /> <!-- a handler to rerender component when URL is changed -->
+
+    <lightning:tabset variant="scoped">
+        <lightning:tab label="Property Details">
+            <div class="slds-p-around_medium">
+                <c:ctrlf_MyPropertyDetails property="{!v.property}"/>
+            </div>
+        </lightning:tab>
+
+        <lightning:tab label="Pricing Details">
+            <div class="slds-p-around_medium">
+                <c:ctrlf_MyProperyPricing property="{!v.property}"/>
+            </div>
+        </lightning:tab>
+
+        <lightning:tab label="Owner Details">
+            <aura:if isTrue="{!v.propertyFound}">
+                <div class="slds-p-around_medium">
+                    <c:ctrlf_MyPropertyOwner propertyOwnerId="{!v.property.Property_Owner__c}"/>
+                </div>
+            </aura:if>
+        </lightning:tab>
+
+        <lightning:tab label="Property Video">
+            <aura:if isTrue="{!v.propertyFound}">
+                <div class="slds-p-around_medium slds-align_absolute-center">
+                    <c:ctrlf_MyProperyVideo property="{!v.property}"/>
+                </div>
+            </aura:if>
+        </lightning:tab>
+    </lightning:tabset>
+</aura:component>

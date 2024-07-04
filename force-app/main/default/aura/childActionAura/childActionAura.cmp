@@ -1,0 +1,8 @@
+<aura:component>
+    <aura:attribute name="parentAction" type="Aura.Action"/>
+    <aura:attribute name="valueToParent" type="String" default="This is value from Child component"/>
+
+    <p>Child Component</p>
+
+    <lightning:button label="Call Parent method" onclick="{!v.parentAction}"/>
+</aura:component>

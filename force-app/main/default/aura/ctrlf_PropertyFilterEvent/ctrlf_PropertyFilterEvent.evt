@@ -1,0 +1,6 @@
+<aura:event type="COMPONENT" description="Event template">
+    <aura:attribute name="locationFilter" type="String"/>
+    <aura:attribute name="bedroomFilter" type="String"/>
+    <aura:attribute name="bathroomFilter" type="String"/>
+    <aura:attribute name="maxPriceFilter" type="String"/>
+</aura:event>

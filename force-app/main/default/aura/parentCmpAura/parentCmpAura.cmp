@@ -1,0 +1,10 @@
+<aura:component>
+    <h1>Calling method of Child component</h1>
+    <hr/>
+
+    <c:childCpmAura aura:id="messages"/>
+
+    <lightning:button label="Show Confirmation" onclick="{!c.handleShow}"/>
+    <lightning:button label="Show Error" onclick="{!c.handleError}"/>
+    <lightning:button label="Remove Message" onclick="{!c.handleRemove}"/>
+</aura:component>	
